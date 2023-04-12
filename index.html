@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Toddy ou Nescau?</title>
+	<!-- Importando CSS do Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col">
+				<h1>O que é melhor? Toddy ou Nescau?</h1>
+				<div>
+					<input type="radio" id="toddy" name="opcao" value="toddy">
+					<label for="toddy">Toddy</label>
+				</div>
+				<div>
+					<input type="radio" id="nescau" name="opcao" value="nescau">
+					<label for="nescau">Nescau</label>
+				</div>
+				<button type="button" class="btn btn-primary mt-3" onclick="armazenarResultado()">Votar</button>
+				<hr>
+				<h2>Resultado atual:</h2>
+				<p>Toddy: <span id="toddyCount">0</span></p>
+				<p>Nescau: <span id="nescauCount">0</span></p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Importando JavaScript do Bootstrap e Script da aplicação -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		// Função para armazenar o resultado da pesquisa
+		function armazenarResultado() {
+			var opcao = document.querySelector('input[name="opcao"]:checked').value;
+			var toddyCount = parseInt(document.getElementById("toddyCount").textContent);
+			var nescauCount = parseInt(document.getElementById("nescauCount").textContent);
+
+			if (opcao === "toddy") {
+				document.getElementById("toddyCount").textContent = toddyCount + 1;
+			} else {
+				document.getElementById("nescauCount").textContent = nescauCount + 1;
+			}
+		}
+	</script>
+</body>
+</html>
